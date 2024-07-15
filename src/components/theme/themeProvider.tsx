@@ -6,6 +6,7 @@ import { GlobalStyles } from "@/styles/globalStyles";
 import { useThemeStore } from "@/hooks/useThemeStore";
 import "@/styles/fonts/font.css";
 import "@/styles/globals.css";
+import "remixicon/fonts/remixicon.css";
 
 interface ThemeProviderProps {
   children: ReactNode;

@@ -1,7 +1,7 @@
-export default function Home() {
-  return (
-    <>
-      <h1>maedeh</h1>
-    </>
-  );
-}
+import { HomePage } from "@/components/pages/home";
+
+const Home: React.FC = () => {
+  return <HomePage />;
+};
+
+export default Home;

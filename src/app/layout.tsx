@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import ClientThemeProvider from "@/components/theme/themeProvider";
+import { Header } from "@/components/pages/layout/header";
+import { Footer } from "@/components/pages/layout/footer";
+import StyledComponentsRegistry from "@/lib/registry";
+import { MainLayout } from "@/components/pages/layout/mainLayout";
 
 export const metadata: Metadata = {
   title: "Maedeh Morajabi",
@@ -14,7 +18,15 @@ export default function RootLayout({
   return (
     <ClientThemeProvider>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          <StyledComponentsRegistry>
+            <MainLayout>
+              <Header />
+              {children}
+              <Footer />
+            </MainLayout>
+          </StyledComponentsRegistry>
+        </body>
       </html>
     </ClientThemeProvider>
   );

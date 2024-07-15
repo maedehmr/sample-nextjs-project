@@ -1,6 +1,8 @@
+import { useThemeStore } from "@/hooks/useThemeStore";
+import { Switch } from "antd";
+
 export const ToggleMode: React.FC = () => {
-  return (
-    <>
-    </>
-  );
+  const { isDarkMode, toggleTheme } = useThemeStore();
+
+  return <Switch defaultChecked onChange={toggleTheme} />;
 };

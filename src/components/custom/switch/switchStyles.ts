@@ -1,6 +1,6 @@
 import { Switch } from "antd";
 import styled from "styled-components";
 
-export const MySwitchStyles = styled(Switch)`
+export const CustomSwitchStyles = styled(Switch)`
   width: 3rem;
 `;

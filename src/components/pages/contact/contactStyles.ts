@@ -1,5 +1,3 @@
 import styled from "styled-components";
 
-export const ContactStyles = styled.div`
-
-`;
+export const ContactStyles = styled.div``;

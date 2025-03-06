@@ -2,13 +2,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "antd";
-import { MySwitch } from "@/components/common/switch";
+import { CustomSwitch } from "@/components/custom/switch";
 import { HeaderStyles } from "./headerStyles";
-import { MyDrawer } from "@/components/common/drawer";
+import { CustomDrawer } from "@/components/custom/drawer";
+import { usePathname } from "next/navigation";
 
 export const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
-
+  const pathname = usePathname();
   const links = {
     start: [
       { href: "/", label: "_Hello" },
@@ -31,7 +32,7 @@ export const Header: React.FC = () => {
       <div className="desktop-menu">
         <div className="start-section">
           <div className="">Maedeh Morajabi</div>
-          <div className="">
+          <div className="menu-links">
             {links.start.map((link) => (
               <Link key={link.href} href={link.href}>
                 {link.label}
@@ -40,7 +41,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
         <div className="end-section">
-          <MySwitch />
+          <CustomSwitch />
           {links.end.map((link) => (
             <Link key={link.href} href={link.href}>
               {link.label}
@@ -58,14 +59,14 @@ export const Header: React.FC = () => {
           <i className="ri-menu-line"></i>
         </Button>
       </div>
-      <MyDrawer open={open} onClose={onClose} title="Maedeh Morajabi">
+      <CustomDrawer open={open} onClose={onClose} title="Maedeh Morajabi">
         {links.start.concat(links.end).map((link) => (
           <Link key={link.href} href={link.href} onClick={onClose}>
             {link.label}
           </Link>
         ))}
-        <MySwitch />
-      </MyDrawer>
+        <CustomSwitch />
+      </CustomDrawer>
     </HeaderStyles>
   );
 };
